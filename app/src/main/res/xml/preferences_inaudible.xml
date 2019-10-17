@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:key="url"
+        android:title="@string/pref_inaudible_url"/>
+    <SwitchPreference
+        android:key="sync"
+        android:title="@string/pref_inaudible_sync_title"
+        android:defaultValue="true"/>
+    <SwitchPreference
+            android:key="notifications"
+            android:title="@string/pref_inaudible_notifications_title"
+            android:defaultValue="true"/>
+    <Preference
+        android:key="sync_now"
+        android:title="@string/pref_inaudible_sync"/>
+</PreferenceScreen>

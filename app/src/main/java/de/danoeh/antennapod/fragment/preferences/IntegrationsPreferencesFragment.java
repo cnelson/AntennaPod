@@ -7,6 +7,7 @@ import de.danoeh.antennapod.activity.PreferenceActivity;
 
 public class IntegrationsPreferencesFragment extends PreferenceFragmentCompat {
     private static final String PREF_SCREEN_GPODDER = "prefGpodderSettings";
+    private static final String PREF_SCREEN_INAUDIBLE = "prefInaudibleSettings";
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -23,6 +24,10 @@ public class IntegrationsPreferencesFragment extends PreferenceFragmentCompat {
     private void setupIntegrationsScreen() {
         findPreference(PREF_SCREEN_GPODDER).setOnPreferenceClickListener(preference -> {
             ((PreferenceActivity) getActivity()).openScreen(R.xml.preferences_gpodder);
+            return true;
+        });
+        findPreference(PREF_SCREEN_INAUDIBLE).setOnPreferenceClickListener(preference -> {
+            ((PreferenceActivity) getActivity()).openScreen(R.xml.preferences_inaudible);
             return true;
         });
     }

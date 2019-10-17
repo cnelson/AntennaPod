@@ -22,6 +22,7 @@ import de.danoeh.antennapod.fragment.preferences.NetworkPreferencesFragment;
 import de.danoeh.antennapod.fragment.preferences.PlaybackPreferencesFragment;
 import de.danoeh.antennapod.fragment.preferences.StoragePreferencesFragment;
 import de.danoeh.antennapod.fragment.preferences.UserInterfacePreferencesFragment;
+import de.danoeh.antennapod.fragment.preferences.InaudiblePreferencesFragment;
 
 /**
  * PreferenceActivity for API 11+. In order to change the behavior of the preference UI, see
@@ -65,6 +66,8 @@ public class PreferenceActivity extends AppCompatActivity implements SearchPrefe
             prefFragment = new GpodderPreferencesFragment();
         } else if (screen == R.xml.preferences_playback) {
             prefFragment = new PlaybackPreferencesFragment();
+        } else if (screen == R.xml.preferences_inaudible) {
+            prefFragment = new InaudiblePreferencesFragment();
         }
         return prefFragment;
     }
@@ -85,6 +88,8 @@ public class PreferenceActivity extends AppCompatActivity implements SearchPrefe
                 return R.string.integrations_label;
             case R.xml.preferences_gpodder:
                 return R.string.gpodnet_main_label;
+            case R.xml.preferences_inaudible:
+                return R.string.inaudible_main_label;
             default:
                 return R.string.settings_label;
         }

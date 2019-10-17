@@ -7,4 +7,9 @@
             android:title="@string/gpodnet_main_label"
             android:summary="@string/gpodnet_summary" />
 
+    <Preference
+        android:key="prefInaudibleSettings"
+        android:title="@string/inaudible_main_label"
+        android:summary="@string/inaudible_summary" />
+
 </PreferenceScreen>

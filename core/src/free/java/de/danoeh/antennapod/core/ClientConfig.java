@@ -28,6 +28,8 @@ public class ClientConfig {
 
     public static GpodnetCallbacks gpodnetCallbacks;
 
+    public static InaudibleCallbacks inaudibleCallbacks;
+
     public static DBTasksCallbacks dbTasksCallbacks;
 
     public static CastCallbacks castCallbacks;

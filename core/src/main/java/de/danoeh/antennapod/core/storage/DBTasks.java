@@ -26,7 +26,9 @@ import de.danoeh.antennapod.core.feed.Feed;
 import de.danoeh.antennapod.core.feed.FeedItem;
 import de.danoeh.antennapod.core.feed.FeedMedia;
 import de.danoeh.antennapod.core.feed.FeedPreferences;
+import de.danoeh.antennapod.core.preferences.InaudiblePreferences;
 import de.danoeh.antennapod.core.service.GpodnetSyncService;
+import de.danoeh.antennapod.core.service.InaudibleSyncService;
 import de.danoeh.antennapod.core.service.download.DownloadStatus;
 import de.danoeh.antennapod.core.service.playback.PlaybackService;
 import de.danoeh.antennapod.core.util.DownloadError;
@@ -171,6 +173,12 @@ public final class DBTasks {
         if (ClientConfig.gpodnetCallbacks.gpodnetEnabled()) {
             GpodnetSyncService.sendSyncIntent(context);
         }
+
+        if (InaudiblePreferences.syncEnabled()) {
+            Log.d(TAG, "Syncing Inaudible");
+            InaudibleSyncService.sendSyncIntent(context);
+        }
+
         // Note: automatic download of episodes will be done but not here.
         // Instead it is done after all feeds have been refreshed (asynchronously),
         // in DownloadService.onDestroy()
